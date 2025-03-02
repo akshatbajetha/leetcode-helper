@@ -3,7 +3,7 @@ import { ScrollArea } from "@radix-ui/react-scroll-area";
 import { Card } from "./ui/card";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
-import { Bot, Link, Loader2, Send } from "lucide-react";
+import { Bot, Loader2, Send } from "lucide-react";
 import { useState } from "react";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
