@@ -60,9 +60,9 @@ The application is structured as follows:
 
 - **Backend API Routes**: Utilizes Next.js API routes to handle server-side logic and communication with OpenAI's API.
 
-- **OpenAI Integration**: Connects to OpenAI's [gpt-4o-mini](https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/) model to generate dynamic, context-aware responses based on user input.
+- **OpenAI Integration**: Connects to OpenAI's [gpt-4o-mini](https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/) model to generate hints for the problem based on user input.
 
-- Styling: Implemented using [Tailwind CSS](https://tailwindcss.com/) and [ShadCN/UI](https://ui.shadcn.com/) for efficient and responsive design.
+- **Styling**: Implemented using [Tailwind CSS](https://tailwindcss.com/) and [ShadCN/UI](https://ui.shadcn.com/) for efficient and responsive design.
 
 ## Usage Guidelines
 
@@ -96,4 +96,7 @@ The integration with OpenAI's GPT models operates as follows:
    The OpenAI API key is stored securely in the .env.local file, ensuring it is not exposed in the codebase. The application retrieves this key to authenticate API requests.
 
 5. Response Handling:
-   User inputs are sent to the OpenAI API, and the responses are processed to display guidance and hints in the user interface, fostering a deeper understanding of DSA problems.
+   User inputs are sent to the OpenAI API, and the responses are processed to display guidance and hints in the user interface, helping in a deeper understanding of DSA problems.
+
+6. Error Handling:
+   The server code and backend prompt is written in such a way that it handles all types of errors like wrong link input etc.
