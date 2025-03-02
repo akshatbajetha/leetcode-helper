@@ -15,7 +15,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Leetcode Helper",
+  title: "Leetcode Buddy",
   description: "A DSA Teaching Assistant",
 };
 

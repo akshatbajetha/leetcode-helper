@@ -7,8 +7,8 @@ import { Bot, Loader2, Send } from "lucide-react";
 import { useState } from "react";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
-import { cn } from "@/lib/utils";
 
+// Define the message type
 interface Message {
   role: "user" | "assistant";
   content: string;
@@ -16,16 +16,19 @@ interface Message {
 
 function Chat() {
   const [input, setInput] = useState("");
+
+  // Default welcome message
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
       content:
-        "Hello! I'm your DSA Teaching Assistant. Share a LeetCode problem link and ask me a question about it. I'll help guide you without giving away the solution.",
+        "Hello! I'm your Leetcode Buddy. Share a LeetCode problem link and ask me a question about it. I'll help guide you without giving away the solution.",
     },
   ]);
   const [isLoading, setIsLoading] = useState(false);
   const [problemLink, setProblemLink] = useState("");
 
+  // Function to handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim()) return;
@@ -41,6 +44,7 @@ function Chat() {
     const doubt = input.trim();
     const link = problemLink.trim();
 
+    // Send the user input to the OpenAI API and fetching the response
     const response = await fetch("/api/generate", {
       method: "POST",
       headers: {
@@ -49,6 +53,8 @@ function Chat() {
       body: JSON.stringify({ link, doubt }),
     });
     const data = await response.json();
+
+    // Storing GPT's response
     const aiResponse: Message = {
       role: "assistant",
       content: data.response,
@@ -60,6 +66,7 @@ function Chat() {
     setInput("");
   };
 
+  // Function to handle Enter button submission
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
@@ -68,14 +75,15 @@ function Chat() {
   };
 
   return (
-    <div className="min-h-[150vh] w-full px-64 flex justify-center">
-      <div className="p-2 md:p-4 min-h-full w-full">
+    <div className="h-screen w-full px-64 flex flex-col items-center">
+      <div className="p-2 h-[80vh] w-full">
+        {/* Chat COntainer */}
         <Card className="min-h-full flex flex-col border-primary/20">
           <ScrollArea className="h-full w-full p-2 md:p-4">
             {messages.map((msg, index) => (
               <div
                 key={index}
-                className={`mb-3 ${
+                className={`mb-3 max-h-full ${
                   msg.role === "user" ? "text-right" : "text-left"
                 }`}
               >
@@ -97,13 +105,13 @@ function Chat() {
         </Card>
       </div>
 
-      {/* Fixed Input at Bottom */}
-      <div className="fixed bottom-5 w-full bg-background rounded-lg p-4 max-w-[600px] border border-primary/20">
+      {/* Input Box */}
+      <div className="bg-background flex justify-center items-center  rounded-lg p-4 border border-primary/20">
         <form
           onSubmit={handleSubmit}
-          className="max-w-[600px] mx-auto flex flex-col gap-2"
+          className="min-w-[600px] flex flex-col gap-2"
         >
-          <div className={cn("space-y-2")}>
+          <div className="space-y-2">
             <Label htmlFor="problem-link">LeetCode Problem URL</Label>
             <Input
               id="problem-link"
