@@ -106,16 +106,15 @@ function Chat() {
       </div>
 
       {/* Input Box */}
-      <div className="bg-background flex justify-center items-center  rounded-lg p-4 border border-primary/20">
+      <div className="bg-background flex justify-center items-center w-full rounded-lg p-4 border border-primary/20">
         <form
           onSubmit={handleSubmit}
-          className="min-w-[600px] flex flex-col gap-2"
+          className="w-full text-center flex flex-col gap-2"
         >
           <div className="space-y-2">
-            <Label htmlFor="problem-link">LeetCode Problem URL</Label>
             <Input
               id="problem-link"
-              placeholder="https://leetcode.com/problems/..."
+              placeholder="Enter Leetcode problem URL - https://leetcode.com/problems/..."
               value={problemLink}
               onChange={(e) => setProblemLink(e.target.value)}
             />
