@@ -58,7 +58,7 @@ The application is structured as follows:
 
 - **Frontend**: Built with [Next.js](https://nextjs.org/) and [TypeScript](https://www.typescriptlang.org/), providing a robust and scalable React framework.
 
-- **Backend API Routes**: Utilizes Next.js API routes to handle server-side logic and communication with external APIs.
+- **Backend API Routes**: Utilizes Next.js API routes to handle server-side logic and communication with OpenAI's API.
 
 - **OpenAI Integration**: Connects to OpenAI's [gpt-4o-mini](https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/) model to generate dynamic, context-aware responses based on user input.
 
