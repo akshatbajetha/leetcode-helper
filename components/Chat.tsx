@@ -5,7 +5,6 @@ import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import { Bot, Loader2, Send } from "lucide-react";
 import { useState } from "react";
-import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 
 // Define the message type
