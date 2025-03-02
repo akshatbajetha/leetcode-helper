@@ -5,7 +5,7 @@ An AI DSA teaching assistant that guides users through Data Structures and Algor
 - [Setup Instructions](#setup-instructions)
 - [Architecture Overview](#architecture-overview)
 - [Usage Guidelines](#usage-guidelines)
-- [GPT Integration Details](gpt-instructions-details)
+- [GPT Integration Details](gpt-integration-details)
 
 ## Setup Instructions
 To set up the project locally, follow these steps:
